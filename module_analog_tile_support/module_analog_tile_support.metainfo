@@ -1,0 +1,34 @@
+-- -*- mode: lua -*-
+
+configPoints = {}
+
+derivedValues = {}
+
+ports = {
+  p_adc_trigger = {
+    short   = "ADC Trigger Port",
+    long    = "Port which is used to generate trigger to cause the ADCs to take samples",
+    help    = "",
+    width   = 32,
+    FIXME   = "XS1_PORT_32A" 
+  }
+}
+
+buildResultsTarget = "XP-SKC-A16"
+
+channels = {}
+
+function getConfigStatus()
+   return "Trusted", {}
+end
+
+generatedCode = {
+   includes = {"analog_tile_support.h"},
+   globals  = "",
+   body  = ""
+}
+
+api = {
+    "at_adc_enable", "at_adc_disable_all", "at_adc_trigger", "at_adc_trigger_packet", "at_adc_read", "at_adc_read_packet", "at_pm_memory_read_impl", "at_pm_memory_write_impl", "at_pm_memory_is_valid", "at_pm_memory_validate", "at_pm_memory_invalidate", "at_pm_enable_wake_source", "at_pm_disable_wake_source", "at_pm_set_wake_time", "at_pm_set_min_sleep_time", "at_pm_sleep_now", "at_rtc_read", "at_rtc_reset", "at_watchdog_enable", "at_watchdog_disable", "at_watchdog_set_timeout", "at_watchdog_kick"
+}
+
